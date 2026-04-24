@@ -1,93 +1,45 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SLFX - Smart Liquidity FX</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #000;
-    color: #fff;
-    text-align: center;
-}
-
-.container {
-    padding: 60px 20px;
-}
-
-h1 {
-    font-size: 40px;
-    letter-spacing: 3px;
-}
-
-p {
-    color: #ccc;
-    font-size: 18px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 25px;
-    background: #25D366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-}
-
-.section {
-    margin-top: 80px;
-}
-
-.box {
-    background: #111;
-    padding: 20px;
-    margin: 15px auto;
-    max-width: 300px;
-    border-radius: 10px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SL FX</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { background:#0b0b0b; color:#fff; font-family:sans-serif; margin:0; }
+    header { padding:15px; text-align:center; font-size:20px; color:gold; }
+    .card { background:#111; margin:10px; padding:15px; border-radius:10px; }
+    button { background:gold; border:none; padding:10px; border-radius:8px; }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
-    <h1>SLFX</h1>
-    <p>Smart Liquidity FX</p>
-    <p>تحليل الأسواق - الذهب - السيولة</p>
+<header>SL FX</header>
 
-    <a class="btn" href="https://wa.me/96597141338" target="_blank">
-        تواصل واتساب
-    </a>
-
-    <div class="section">
-        <h2>خدماتنا</h2>
-
-        <div class="box">
-            <h3>تحليل الذهب</h3>
-            <p>قراءة سيولة احترافية لحركة الذهب</p>
-        </div>
-
-        <div class="box">
-            <h3>إشارات تداول</h3>
-            <p>دخول ذكي مبني على السيولة</p>
-        </div>
-
-        <div class="box">
-            <h3>إدارة رأس المال</h3>
-            <p>تقليل المخاطر وتعظيم الأرباح</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>تواصل معنا</h2>
-        <p>اضغط الزر وابدأ مباشرة</p>
-    </div>
+<div class="card">
+  <h3>📊 تحليل السوق</h3>
+  <p>السوق يميل للبيع من مناطق السيولة العليا</p>
 </div>
+
+<div class="card">
+  <h3>📈 Signal</h3>
+  <p>Sell XAUUSD</p>
+  <p>Entry: 2350</p>
+  <p>TP: 2320</p>
+  <p>SL: 2365</p>
+</div>
+
+<div class="card">
+  <h3>🔒 VIP</h3>
+  <p>هذا القسم مدفوع</p>
+  <button onclick="pay()">Pay with USDT</button>
+</div>
+
+<script>
+function pay(){
+  alert("حول USDT على العنوان: YOUR_WALLET_ADDRESS");
+}
+</script>
 
 </body>
 </html>
