@@ -1,44 +1,132 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SL FX</title>
-  <link rel="manifest" href="manifest.json">
-  <style>
-    body { background:#0b0b0b; color:#fff; font-family:sans-serif; margin:0; }
-    header { padding:15px; text-align:center; font-size:20px; color:gold; }
-    .card { background:#111; margin:10px; padding:15px; border-radius:10px; }
-    button { background:gold; border:none; padding:10px; border-radius:8px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLFX</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0b0b0b;
+    color: #fff;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background: #111;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #222;
+}
+
+.nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* HEADER */
+.header {
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    color: gold;
+    font-size: 35px;
+}
+
+/* CARD */
+.card {
+    background: #111;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* SIGNAL */
+.signal {
+    background: #151515;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.buy { color: #00ff88; }
+.sell { color: red; }
+
+/* BUTTON */
+.btn {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    background: gold;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+</style>
 </head>
+
 <body>
 
-<header>SL FX</header>
-
-<div class="card">
-  <h3>📊 تحليل السوق</h3>
-  <p>السوق يميل للبيع من مناطق السيولة العليا</p>
+<div class="header">
+    <div class="logo">SLFX</div>
+    <div>Smart Liquidity FX</div>
 </div>
 
 <div class="card">
-  <h3>📈 Signal</h3>
-  <p>Sell XAUUSD</p>
-  <p>Entry: 2350</p>
-  <p>TP: 2320</p>
-  <p>SL: 2365</p>
+    <h3>📊 نظرة السوق</h3>
+    <p style="color:#00ff88;">صاعد (BULLISH)</p>
 </div>
 
 <div class="card">
-  <h3>🔒 VIP</h3>
-  <p>هذا القسم مدفوع</p>
-  <button onclick="pay()">Pay with USDT</button>
+    <h3>📈 شارت الذهب</h3>
+    <div id="tradingview_gold"></div>
 </div>
 
+<div class="card">
+    <h3>🔥 التوصيات</h3>
+
+    <div class="signal">
+        XAUUSD - <span class="buy">BUY</span><br>
+        Entry: 2357<br> SL: 2346<br> TP: 2368
+    </div>
+
+    <div class="signal">
+        XAUUSD - <span class="sell">SELL</span><br>
+        Entry: 2425<br> SL: 2436<br> TP: 2415
+    </div>
+</div>
+
+<a class="btn" href="https://wa.me/96597141338">
+    اشترك VIP
+</a>
+
+<div class="nav">
+    <a href="#">الرئيسية</a>
+    <a href="#">التوصيات</a>
+    <a href="#">التنبيهات</a>
+    <a href="#">حسابي</a>
+</div>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
 <script>
-function pay(){
-  alert("حول USDT على العنوان: YOUR_WALLET_ADDRESS");
-}
+new TradingView.widget({
+  "width": "100%",
+  "height": 300,
+  "symbol": "OANDA:XAUUSD",
+  "interval": "15",
+  "theme": "dark",
+  "container_id": "tradingview_gold"
+});
 </script>
 
 </body>
